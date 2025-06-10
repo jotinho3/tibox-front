@@ -28,7 +28,7 @@ export interface Idea {
   comments: Comment[];
 }
 
-const API_URL = "http://localhost:8080/ideas";
+const API_URL = `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000"}/ideas`;
 const AUTH_HEADER = {
   Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN || ""}`,
 };

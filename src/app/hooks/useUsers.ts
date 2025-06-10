@@ -15,8 +15,9 @@ export function useUsers() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    const API_URL = `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000"}/users`;
     axios
-      .get<User[]>("http://localhost:8080/users", {
+      .get<User[]>(API_URL, {
         headers: {
           Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN || ""}`,
         },
