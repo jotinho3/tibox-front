@@ -59,6 +59,20 @@ Acesse [http://localhost:3000](http://localhost:3000) no navegador.
 
 ---
 
+## 🧪 Testes Automatizados
+
+- **Jest + Testing Library:** Este projeto utiliza [Jest](https://jestjs.io/) e [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) para testes automatizados de componentes, hooks e páginas. Os testes garantem a qualidade e o correto funcionamento das principais funcionalidades da aplicação.
+
+### Como rodar os testes
+
+```bash
+npm run test
+```
+
+Os testes estão localizados na pasta `src/app/__tests__` e em subpastas de hooks e componentes.
+
+---
+
 ## 📚 Observações
 
 - O front-end está totalmente desacoplado do back-end, comunicando-se via API REST.
