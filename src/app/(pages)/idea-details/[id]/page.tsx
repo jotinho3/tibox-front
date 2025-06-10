@@ -118,7 +118,7 @@ export default function IdeaDetails() {
             <FaThumbsUp className="mr-1" /> {idea.votes} votos
           </span>
           <span className="flex items-center text-gray-500 dark:text-gray-400">
-            <FaRegCommentDots className="mr-1" /> {idea.comments.length} comments
+            <FaRegCommentDots className="mr-1" /> {idea.comments.length} comentários
           </span>
         </div>
         <span className="text-xs text-gray-400">
