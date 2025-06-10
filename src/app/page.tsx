@@ -6,7 +6,7 @@ import { FaSearch, FaUserCircle, FaThumbsUp, FaPlus } from "react-icons/fa";
 import { useState } from "react";
 import { Loader } from "@/app/components";
 
-export function Home() {
+export default function Home() {
   const { ideas, loading } = useIdeas();
   const [search, setSearch] = useState("");
 

@@ -47,8 +47,11 @@ export default function IdeaDetails() {
       });
       setComment("");
       setUserId("");
-    } catch (_err) { // changed from 'err' to '_err'
-      setError("Failed to add comment.");
+    } catch (_err) {
+      const err = _err as { response?: { data?: { error: string } } };
+      if (err.response && err.response.data && err.response.data.error) {
+        setError(err.response.data.error);
+      }
     } finally {
       setSubmitting(false);
     }
