@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import { useIdeas } from "@/app/hooks";
 import { Idea, Comment } from "@/app/hooks/useIdeas";
 import { useUsers } from "@/app/hooks/useUsers";
-import { FaUserCircle, FaRegCommentDots, FaThumbsUp, FaSpinner } from "react-icons/fa";
+import { FaUserCircle, FaRegCommentDots, FaThumbsUp } from "react-icons/fa";
 import { Loader } from "@/app/components";
 
 export default function IdeaDetails() {
@@ -32,7 +32,7 @@ export default function IdeaDetails() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
-  const handleCommentSubmit = async (e: React.FormEvent) => {
+ const handleCommentSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!comment.trim() || !userId || !idea) return;
     setSubmitting(true);
@@ -47,7 +47,7 @@ export default function IdeaDetails() {
       });
       setComment("");
       setUserId("");
-    } catch (err) {
+    } catch (_err) { // changed from 'err' to '_err'
       setError("Failed to add comment.");
     } finally {
       setSubmitting(false);
@@ -78,8 +78,12 @@ export default function IdeaDetails() {
         votedBy: idea.votedBy ? [...idea.votedBy, user.name] : [user.name],
       });
       setLikeUserId("");
-    } catch (err: any) {
-      setLikeError(err?.response?.data?.error || "Failed to like/vote.");
+    } catch (err: unknown) { // changed from 'any' to 'unknown'
+      if (err && typeof err === "object" && "response" in err && err.response && typeof err.response === "object" && "data" in err.response && err.response.data && typeof err.response.data === "object" && "error" in err.response.data) {
+        setLikeError((err.response as { data: { error: string } }).data.error);
+      } else {
+        setLikeError("Failed to like/vote.");
+      }
     } finally {
       setLiking(false);
     }

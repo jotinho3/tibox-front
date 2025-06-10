@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { useIdeas } from "@/app/hooks";
-import { FaSearch, FaUserCircle, FaThumbsUp, FaPlus, FaSpinner } from "react-icons/fa";
+import { FaSearch, FaUserCircle, FaThumbsUp, FaPlus } from "react-icons/fa";
 import { useState } from "react";
 import { Loader } from "@/app/components";
 
-export default function Home() {
+export function Home() {
   const { ideas, loading } = useIdeas();
   const [search, setSearch] = useState("");
 
