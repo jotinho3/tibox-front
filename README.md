@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tibox Ideias — Front-end
 
-## Getting Started
+Este é o front-end do projeto Tibox Ideias, uma aplicação React/Next.js para cadastro, votação e comentários em ideias, com foco em experiência do usuário, visual moderno e integração total com o back-end via API REST.
 
-First, run the development server:
+---
+
+## 🚀 O que a aplicação faz?
+
+- **Listagem de Ideias:** Mostra todas as ideias em cards bonitos, com dimensões fixas, exibindo título, descrição, autor, votos e data.
+- **Busca:** Barra de busca no topo para filtrar ideias pelo título em tempo real.
+- **Criação de Ideia:** Formulário estilizado para cadastrar novas ideias, escolhendo o usuário criador.
+- **Detalhes da Ideia:** Página dedicada mostrando todos os detalhes, comentários e opção de votar (like).
+- **Votação:** Usuário pode votar em uma ideia apenas uma vez. O voto é registrado pelo nome do usuário e impede votos duplicados.
+- **Comentários:** Usuários podem comentar em ideias. O formulário de comentário é integrado e estilizado.
+- **UX aprimorada:** Ao selecionar um usuário para votar, o mesmo usuário é automaticamente selecionado para comentar, facilitando a interação.
+- **Feedback visual:** Loaders animados, botões com feedback de loading, mensagens de erro e sucesso.
+- **Responsividade:** Layout adaptável para diferentes tamanhos de tela.
+- **Header:** Cabeçalho centralizado com ícone e link para a home.
+
+---
+
+## 🛠️ Principais Bibliotecas e Ferramentas
+
+- **Next.js:** Framework React para SSR/SSG e rotas dinâmicas.
+- **React Icons:** Ícones modernos e bonitos (usuário, like, comentário, etc).
+- **Axios:** Requisições HTTP para o back-end.
+- **Tailwind CSS:** Estilização rápida e responsiva via classes utilitárias.
+- **TypeScript:** Tipagem estática para maior segurança e produtividade.
+
+---
+
+## 📁 Estrutura de Componentes
+
+- **Loader:** Componente reutilizável de carregamento com animação de spinner.
+- **Header:** Cabeçalho centralizado com ícone e título, linkando para a página inicial.
+- **Cards de Ideia:** Cards com dimensões fixas, mantendo o layout alinhado independentemente do tamanho do texto.
+- **Formulários:** Inputs e selects estilizados, com ícones e feedback visual.
+
+---
+
+## 💡 Experiência do Usuário
+
+- **Seleção de Usuário Integrada:** Ao escolher um usuário para votar, o mesmo é pré-selecionado para comentar.
+- **Mensagens de feedback:** Erros e sucessos são exibidos de forma clara e amigável.
+- **Animações:** Loader com spinner animado e botões com feedback visual.
+- **Acessibilidade:** Cores e tamanhos de fonte pensados para boa leitura em modo claro e escuro.
+
+---
+
+## 🔗 Como rodar o front-end
 
 ```bash
+cd tibox-front
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000) no navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📚 Observações
 
-## Learn More
+- O front-end está totalmente desacoplado do back-end, comunicando-se via API REST.
+- O código está organizado, tipado e fácil de manter.
+- O projeto foi desenvolvido com foco em UX, clareza visual e código limpo.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Feito para o teste da Tibox 🚀
